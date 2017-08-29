@@ -25,7 +25,7 @@ private:
 
     // windows widget
     QDockWidget *td_model_show_;
-    QDockWidget *td_model_show_2_;
+//    QDockWidget *td_model_show_2_;
 
     QAction *dock_img_open_;
 
