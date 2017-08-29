@@ -3,6 +3,12 @@
 
 #include <QWidget>
 
+
+/*
+ *    2d image show class
+ *
+ */
+
 class view2d : public QWidget
 {
     Q_OBJECT
@@ -11,7 +17,19 @@ public:
 
 signals:
 
+
 public slots:
+    void open_image();
+
+protected:
+    void paintEvent( QPaintEvent *paintevent);
+
+
+    //show image, caricature image
+    QImage *img_car;
+    QString img_car_filename;
+
+
 };
 
 #endif // VIEW2D_H
