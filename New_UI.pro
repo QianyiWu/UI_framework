@@ -182,3 +182,9 @@ INCLUDEPATH += /Eigen \
 
 LIBS += -lGLU \
 
+
+#RC_FILE + = /Icons \
+
+RESOURCES += \
+    icons.qrc
+

@@ -45,7 +45,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     // open image
-    dock_img_open_ = new QAction(tr("&Open"),this);
+    dock_img_open_ = new QAction(QIcon(":/Icons/open.ico"),tr("Open"),this);
     dock_img_open_->setShortcut(QKeySequence::Open);
     dock_img_open_->setStatusTip(tr("Open Existing file"));
     connect(dock_img_open_, SIGNAL(triggered()),img_show_,SLOT(open_image()));
