@@ -1,4 +1,3 @@
-#This is the New UI
+UI framework
 
-Lib Dependence: OpenMesh \ Eigen 
-need openGL to display 3d
+Lib Dependence: OpenMesh \ Eigen \OpenGL
