@@ -18,25 +18,27 @@ MeshExaminer::~MeshExaminer()
 
 void MeshExaminer::draw()
 {
-    double dist_x = max_coord[0] - min_coord[0];
-    double dist_y = max_coord[1] - min_coord[1];
-    double dist_z = max_coord[2] - min_coord[2];
+//    double dist_x = max_coord[0] - min_coord[0];
+//    double dist_y = max_coord[1] - min_coord[1];
+//    double dist_z = max_coord[2] - min_coord[2];
     glBegin(GL_TRIANGLES);
     for (TriMesh::FaceIter f_it = mesh_show_.faces_begin();
          f_it != mesh_show_.faces_end(); f_it++)
     {
-        TriMesh::Normal normal = mesh_show_.normal(*f_it);
+//        TriMesh::Normal normal = mesh_show_.normal(*f_it);
         for(TriMesh::FaceHalfedgeIter fh_it = mesh_show_.fh_iter(*f_it);
             fh_it.is_valid(); fh_it++)
         {
             TriMesh::VertexHandle toV = mesh_show_.to_vertex_handle(*fh_it);
             TriMesh::Point point = mesh_show_.point(toV);
+            TriMesh::Normal normal = mesh_show_.normal(toV);
             glColor3f(0.5f,0.5f,0.5f);
             glNormal3f(-normal[0], -normal[1], -normal[2]);
-            glVertex3f(2*point[0]/dist_x, 2*point[1]/dist_y, 2*point[2]/dist_z);
+//            glVertex3f(2*point[0]/dist_x, 2*point[1]/dist_y, 2*point[2]/dist_z);
+            glVertex3f(point[0],point[1],point[2]);
+
         }
     }
-
 
     // debug for mesh show
 //    glColor3f(0.5,0.5,0.5);
