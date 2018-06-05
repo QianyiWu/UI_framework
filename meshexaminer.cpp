@@ -32,8 +32,8 @@ void MeshExaminer::draw()
             TriMesh::VertexHandle toV = mesh_show_.to_vertex_handle(*fh_it);
             TriMesh::Point point = mesh_show_.point(toV);
             glColor3f(0.5f,0.5f,0.5f);
-            glNormal3f(normal[0], normal[1], normal[2]);
-            glVertex3f(-1.5*point[0]/dist_x, -1.5*point[1]/dist_y, -1.5*point[2]/dist_z);
+            glNormal3f(-normal[0], -normal[1], -normal[2]);
+            glVertex3f(2*point[0]/dist_x, 2*point[1]/dist_y, 2*point[2]/dist_z);
         }
     }
 

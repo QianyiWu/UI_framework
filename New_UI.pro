@@ -179,8 +179,18 @@ DISTFILES += \
     OpenMesh/Core/Utils/ACGMakefile
 
 INCLUDEPATH += /Eigen \
+                /usr/local/include \
+
+
+
+LIBS += -L/usr/local/lib \
+        -L/usr/local/lib/x86_64-linux-gnu \
+        -L/usr/lib \
 
 LIBS += -lGLU \
+        -ldlib \
+        -lopencv_highgui \
+        -lopencv_core \
 
 
 #RC_FILE + = /Icons \

@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     view2d *img_show_ = new view2d();   // 2d image show
     view3d *gl_show_ = new view3d();    // 3d model show
-//    view3d *gl_show_2 = new view3d();
+    view3d *gl_show_2 = new view3d();
 
     setCentralWidget(img_show_);   // image in center
 
@@ -27,21 +27,28 @@ MainWindow::MainWindow(QWidget *parent) :
     addDockWidget(Qt::RightDockWidgetArea, td_model_show_);
 
 
-//    td_model_show_2_ = new QDockWidget(tr("&3D model of potrait"),this);
-//    td_model_show_2_ -> setFeatures(QDockWidget::DockWidgetFloatable);
-//    td_model_show_2_ -> setFixedSize(500,500);
-//    td_model_show_2_ -> setAllowedAreas(Qt::RightDockWidgetArea);
-//    td_model_show_2_ -> setWidget(gl_show_2);
-//    addDockWidget(Qt::RightDockWidgetArea, td_model_show_2_);
+    td_model_show_2_ = new QDockWidget(tr("&3D model of potrait"),this);
+    td_model_show_2_ -> setFeatures(QDockWidget::DockWidgetFloatable);
+    td_model_show_2_ -> setFixedSize(500,500);
+    td_model_show_2_ -> setAllowedAreas(Qt::RightDockWidgetArea);
+    td_model_show_2_ -> setWidget(gl_show_2);
+    addDockWidget(Qt::RightDockWidgetArea, td_model_show_2_);
 
 
     //  IF YOU WANT TO LOAD MESH , LIKE THIS
-//    QString mesh_path = "/home/wooqy/head_0.obj";
-//    if(OpenMesh::IO::read_mesh(mesh,mesh_path.toStdString().c_str()))
-//        std::cout<<"load mesh"<<std::endl;
+    QString mesh_path = "/home/wooqy/FaceWarehouse_Data/Tester_2/Blendshape/shape_0.obj";
+    if(!OpenMesh::IO::read_mesh(mesh,mesh_path.toStdString().c_str()))
+        std::cout<<"Not load mesh"<<std::endl;
 
     gl_show_->updateMesh(mesh);
     gl_show_->resetMesh(mesh,1);
+
+    QString mesh_path_1 = "/home/wooqy/FaceWarehouse_Data/Tester_1/Blendshape/shape_0.obj";
+    if(!OpenMesh::IO::read_mesh(mesh_2,mesh_path_1.toStdString().c_str()))
+        std::cout<<"Not load mesh"<<std::endl;
+
+    gl_show_2->updateMesh(mesh_2);
+    gl_show_2->resetMesh(mesh_2,1);
 
 
     // open image

@@ -51,9 +51,9 @@ void GLExaminer::init()
   // lighting
   glLoadIdentity();
 
-  GLfloat pos1[] = { 0.1, 0.1, -0.02, 0.0};
-  GLfloat pos2[] = {-0.1, 0.1, -0.02, 0.0};
-  GLfloat pos3[] = { 0.0, 0.0, -0.1, 0.0};
+  GLfloat pos1[] = { 0.1, 0.1, -1, 0.0};
+  GLfloat pos2[] = {-0.1, 0.1, -1, 0.0};
+  GLfloat pos3[] = { 0.0, 0.0, -1, 0.0};
   GLfloat col1[] = {.2, .2, .2, 1.0};
   GLfloat col2[] = {.3, .3, .3, 1.0};
   GLfloat col3[] = {1.0, 1.0, 1.0, 1.0};
@@ -87,8 +87,8 @@ void GLExaminer::init()
 
   // projection
   near_ = 0.0001f;
-  far_  = 1000.0f;
-  fovy_ = 90.0f;
+  far_  = 20.0f;
+  fovy_ = 60.0f;
 }
 
 void GLExaminer::reshape(int _w, int _h)
