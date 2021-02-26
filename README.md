@@ -1,5 +1,5 @@
 ## User Interface framework
-This project based on Qt. It provide an UI framework to display 2D image and 3D mesh.
+This project based on Qt. It provides an UI framework to display 2D image and 3D mesh.
 
 Lib Dependence: OpenMesh \ Eigen \OpenGL
 
